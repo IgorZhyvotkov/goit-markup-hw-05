@@ -18,6 +18,7 @@
   --transition-option: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --backdrop-bg:  rgba(0, 0, 0, 0.2);
   --backdrop-opacity: 700ms cubic-bezier(0.4, 0, 0.2, 1);
+  --activity-tittle-bg: rgba(47, 48, 58, 0.8);
 }
 
 body {
@@ -338,20 +339,16 @@ p {
   position: relative;
 }
 .tittle-position {
-  display: block;
-  width: 100%;
-  background: rgba(47, 48, 58, 0.8);
   position: absolute;
   bottom: 0;
-}
-.img-tittle.tittle {
-  margin: 0;
-  padding-top: 27px;
-  padding-bottom: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background: var(--activity-tittle-bg);   
   color: var(--taxt-on-bg);
-  font-family: var(--first-text);
   font-weight: 700;
-  font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
 }
@@ -406,7 +403,7 @@ p {
   align-items: center;
   border-radius: 50%;
   color: var(--icon-color);
-  transition: background-color, color var(--transition-option);
+  transition: background-color var(--transition-option), color var(--transition-option);
 }
 .icon-link:hover,
 .icon-link:focus {
@@ -437,7 +434,7 @@ p {
   align-items: center;
   justify-content: center;
   color: var(--icon-color);
-  transition: border, color var(--transition-option);
+  transition: border var(--transition-option), color var(--transition-option);
 }
 .clients-list .item + .item {
   margin-left: 30px;
@@ -474,7 +471,7 @@ p {
   text-align: center;
   cursor: pointer;
   letter-spacing: inherit;
-  transition: background-color, color, box-shadow var(--transition-option);
+  transition: background-color var(--transition-option),color var(--transition-option), box-shadow var(--transition-option);
 }
 .projects-list .button:hover,
 .projects-list .button:focus {
@@ -525,7 +522,8 @@ p {
   transform: translateY(101%);
   transition: transform var(--transition-option);
 }
-.grid-link:hover .overlay-slide {
+.grid-link:hover .overlay-slide,
+.grid-link:focus .overlay-slide {
   transform: translateY(0%);
 }
 .grid-text {
